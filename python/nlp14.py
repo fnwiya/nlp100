@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 import sys
 
-n = int(sys.argv[2])
-with open(sys.argv[1]) as f:
-    lines = f.readlines()
+def head(filename, show_lines):
+    with open(filename) as f:
+        lines = f.readlines()
+    for i in range(show_lines):
+        print(lines[i]),
 
-for i in range(n):
-    print(lines[i]),
+head(sys.argv[1], int(sys.argv[2]))

@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 import sys
 
-n = int(sys.argv[2])
-with open(sys.argv[1]) as f:
-    lines = f.readlines()
-    l = len(lines)
 
-for line in lines[len(lines) - n:]:
-    print(line),
+def tail(filename, show_lines):
+    with open(filename) as f:
+        lines = f.readlines()
+    for line in lines[len(lines) - show_lines:]:
+        print(line),
+
+tail(sys.argv[1], int(sys.argv[2]))

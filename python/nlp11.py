@@ -2,9 +2,11 @@
 # -*- coding: utf-8 -*-
 import sys
 
-with open(sys.argv[1]) as f:
-    content = f.read()
 
-content.replace("\t", " ")
+def separate_by_tab(filename):
+    with open(filename) as f:
+        content = f.read()
+    content.replace("\t", " ")
+    print(content)
 
-print(content)
+separate_by_tab(sys.argv[1])
