@@ -10,7 +10,7 @@ def nlp21(filename):
     with open(filename) as f:
         lines = f.readlines()
         for line in lines:
-            if re.search(search_word, line):
+            if search_word.search(line):
                 ret.append(line)
     return ret
 
